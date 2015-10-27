@@ -1,6 +1,6 @@
 jsonp_handler({
  "version": "1",
- "build": 59,
+ "build": 61,
  "title": "pagebreaker",
  "minruntime": 1,
  "baseurl": "http://rawgit.com/ksanaforge/pagebreaker/master/",
@@ -20,26 +20,26 @@ jsonp_handler({
  "files": [
   "index.html",
   "index.css",
+  "codemirror.css",
   "react-bundle.js",
   "bundle.js",
-  "jquery.js",
   "ksana.js"
  ],
  "filesizes": [
-  502,
+  467,
   157,
+  8023,
   672371,
   544349,
-  277980,
-  804
+  769
  ],
  "filedates": [
-  "2015-10-27T10:01:18.823Z",
+  "2015-10-27T11:09:55.433Z",
   "2015-10-27T10:19:29.200Z",
+  "2015-10-27T09:40:30.751Z",
   "2015-10-27T09:36:14.497Z",
-  "2015-10-27T10:51:27.327Z",
-  "2015-10-27T09:32:56.304Z",
-  "2015-10-27T10:51:06.853Z"
+  "2015-10-27T11:10:39.639Z",
+  "2015-10-27T11:10:33.170Z"
  ],
- "date": "2015-10-27T10:51:28.251Z"
+ "date": "2015-10-27T11:10:40.551Z"
 })
