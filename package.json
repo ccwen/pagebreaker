@@ -1,0 +1,27 @@
+{
+  "name": "ksana2015-scaffold-reflux",
+  "description": "New reflux application",
+  "version": "0.14.0",
+  "main": "index.html",
+  "inject-js-start":"nwmain.js",
+  "single-instance":true,
+  "window": {
+    "toolbar": true,
+    "width": 1060,
+    "height": 700
+  },
+  "scripts" : {
+  },
+  "dependencies": {
+    "ksana-codemirror":"git+https://github.com/ksanaforge/ksana-codemirror.git"
+    ,"codemirror":"^5.8.x"
+    ,"react":"^0.14.0"
+    ,"react-dom":"^0.14.0"
+  },
+  
+ "repository": 
+  {
+      "type": "git", 
+      "url": "https://github.com/ksanaforge/pagebreaker"
+  }  
+}
