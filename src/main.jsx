@@ -4,8 +4,9 @@ var CodeMirror=require("ksana-codemirror").Component;
 var file1=require("./001-001");
 var Maincomponent = React.createClass({
 	getInitialState:function() {
-		return {data:file1,lastline:-1,pageid:"1.1a"}
+		return {data:file1,pageid:"1.1a"}
 	}
+	,prevline:-1
 	,PBLINE:[]
 	,imageLoaded:function() {
 		var imageheight=ReactDOM.findDOMNode(this.refs.image).offsetHeight;
@@ -63,8 +64,9 @@ var Maincomponent = React.createClass({
 		var dirty=false;
 		line.replace(/<(.*?)>/g,function(m,m1,idx){
 			var element=this.createMarker(m1);
-			dirty=true;
-			this.doc.markText({line:i,ch:idx},{line:i,ch:idx+m.length},{clearOnEnter:true,replacedWith:element});
+			if (m1.substring(0,2)==="pb") dirty=true;
+			this.doc.markText({line:i,ch:idx},{line:i,ch:idx+m.length},
+				{clearOnEnter:true,replacedWith:element});
 		}.bind(this));
 		setTimeout(function(){
 			if (rebuild && dirty) this.buildPBLINE();
@@ -78,12 +80,12 @@ var Maincomponent = React.createClass({
 	}
 	,onCursorActivity:function(cm) {
 		var pos=cm.getCursor();
-		if (this.state.lastline>-1 && pos.line!==this.state.lastline) {
-			this.markLineTag(this.state.lastline,true);
+		if (this.prevline>-1 && pos.line!==this.prevline) {
+			this.markLineTag(this.prevline,true);
 			var pageid=this.getPageIdByLine(pos.line);
 			this.setState({pageid:pageid});
 		}
-		this.setState({lastline:pos.line});
+		this.prevline=pos.line;
 	}
   ,render: function() {
     return <div>
